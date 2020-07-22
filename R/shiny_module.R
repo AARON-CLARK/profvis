@@ -95,15 +95,16 @@ profvis_server <- function(input, output, session, dir = ".") {
 
   shiny::setBookmarkExclude(c("start_rprof", "browse", "dl_rprof", "dl_profvis", "download"))
 
-  shiny::observeEvent(input$start_rprof, {
-    if (!profiling()) {
+  # shiny::observeEvent(input$start_rprof, {
+  shiny::observe({
+    # if (!profiling()) {
       proffile <- file.path(dir, strftime(Sys.time(), "%Y-%m-%d_%H-%M-%S.Rprof"))
       Rprof(proffile,
         interval = 0.01, line.profiling = TRUE,
         gc.profiling = TRUE, memory.profiling = TRUE)
       current_profile(proffile)
       profiling(TRUE)
-    }
+    # }
   })
 
   output$button_group <- shiny::renderUI({
