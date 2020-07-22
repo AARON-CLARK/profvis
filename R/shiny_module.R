@@ -85,7 +85,7 @@ profvis_server <- function(input, output, session, dir = ".") {
     stop('profvis_server requires the shiny package.')
   }
   # Whether we're currently profiling
-  profiling <- shiny::reactiveVal(FALSE)
+  profiling <- shiny::reactiveVal(TRUE)
   # The current/most recent profile
   current_profile <- shiny::reactiveVal(NULL)
 
