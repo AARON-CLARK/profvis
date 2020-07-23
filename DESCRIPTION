@@ -1,4 +1,4 @@
-Package: profvis
+Package: profvisAC
 Title: Interactive Visualizations for Profiling R Code
 Version: 0.3.6.9100
 Authors@R: c(
@@ -28,5 +28,5 @@ Suggests:
     shiny,
     htmltools
 RoxygenNote: 6.1.1
-URL: https://rstudio.github.io/profvis/
+URL: https://github.com/AARON-CLARK/profvis
 Encoding: UTF-8
